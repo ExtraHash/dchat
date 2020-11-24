@@ -11,7 +11,7 @@ export type IFile = {
     data: string;
     id: string;
     fileName: string;
-}
+};
 
 export type Message = {
     type: string;
@@ -69,19 +69,13 @@ export class ChatWindow extends Component<Props, State> {
 
         try {
             msg = JSON.parse(data);
-            console.log(msg);
             switch (msg.type) {
                 case "message":
                     const chatHistory = this.state.chatHistory;
                     chatHistory.push(msg);
-                    this.setState(
-                        {
-                            chatHistory,
-                        },
-                        () => {
-                            console.log(this.state.chatHistory);
-                        }
-                    );
+                    this.setState({
+                        chatHistory,
+                    });
                     break;
             }
         } catch (err) {
@@ -96,19 +90,25 @@ export class ChatWindow extends Component<Props, State> {
                 onDrop={async (acceptedFiles) => {
                     if (acceptedFiles) {
                         const formData = new FormData();
-            
+
                         let totalSize = 0;
                         for (let i = 0; i < acceptedFiles.length; i++) {
-                            formData.append("file", acceptedFiles[i], acceptedFiles[i].name);
+                            formData.append(
+                                "file",
+                                acceptedFiles[i],
+                                acceptedFiles[i].name
+                            );
                             totalSize += acceptedFiles[i].size;
                         }
                         if (totalSize > 1048576) {
                             console.warn("File is too big.");
                             return;
                         }
-            
+
                         await ax.post(
-                            "https://" + process.env.REACT_APP_API_URL + "/file",
+                            "https://" +
+                                process.env.REACT_APP_API_URL +
+                                "/file",
                             formData
                         );
                     }
@@ -186,7 +186,22 @@ export class ChatWindow extends Component<Props, State> {
                                                         </small>
                                                         <br />
                                                         {message.text}
-                                                        <a href={"https://"+process.env.REACT_APP_API_URL+"/file/"+message.file.id} rel="noopener noreferrer" target="_blank">{message.file.fileName}</a>
+                                                        <a
+                                                            href={
+                                                                "https://" +
+                                                                process.env
+                                                                    .REACT_APP_API_URL +
+                                                                "/file/" +
+                                                                message.file.id
+                                                            }
+                                                            rel="noopener noreferrer"
+                                                            target="_blank"
+                                                        >
+                                                            {
+                                                                message.file
+                                                                    .fileName
+                                                            }
+                                                        </a>
                                                     </div>
                                                 </div>
                                                 <div className="media-right"></div>

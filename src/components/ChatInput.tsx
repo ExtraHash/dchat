@@ -48,19 +48,25 @@ export class ChatInput extends Component<Props, State> {
                             const acceptedFiles = fileEvent.target.files;
                             if (acceptedFiles) {
                                 const formData = new FormData();
-                    
+
                                 let totalSize = 0;
                                 for (let i = 0; i < acceptedFiles.length; i++) {
-                                    formData.append("file", acceptedFiles[i], acceptedFiles[i].name);
+                                    formData.append(
+                                        "file",
+                                        acceptedFiles[i],
+                                        acceptedFiles[i].name
+                                    );
                                     totalSize += acceptedFiles[i].size;
                                 }
                                 if (totalSize > 1048576) {
                                     console.warn("File is too big.");
                                     return;
                                 }
-                    
+
                                 await ax.post(
-                                    "https://" + process.env.REACT_APP_API_URL + "/file",
+                                    "https://" +
+                                        process.env.REACT_APP_API_URL +
+                                        "/file",
                                     formData
                                 );
                             }
