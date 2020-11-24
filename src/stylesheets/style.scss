@@ -1,0 +1,687 @@
+$black: #080808;
+$black-bis: #1e1f1c;
+$black-ter: #272822;
+$grey-darker: #414339;
+
+$red: #f92672;
+$green: #a6e22e;
+$yellow: #f4bf75;
+$blue: $red;
+$blue_: #79a6af;
+$purple: #ae81ff;
+$cyan: #ae81ff;
+$turquoise: #2aa198;
+$white: #f8f8f2;
+$brown: #7b3f00;
+
+$menu-item-hover-background-color: $black-ter;
+$menu-item-hover-color: $white;
+$menu-item-active-background-color: $black-ter;
+
+@import "../../node_modules/bulma/bulma.sass";
+
+.avatar-upload-button:hover {
+    cursor: pointer;
+    background-color: darken($grey-darker, 10%);
+    color: $white;
+}
+
+.unread-icon {
+    border-radius: 60px;
+    background-color: $red;
+    padding: 0.5em 0.8em;
+    float: right;
+    color: $white;
+    font-size: 10px;
+}
+
+.avatar-upload-button {
+    position: absolute;
+    color: $white;
+    background-color: $grey-darker;
+    top: 0;
+    right: 0;
+    margin-top: -5px;
+    margin-right: -5px;
+    left: auto;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+a:hover {
+    color: lighten($red, 5%);
+}
+
+body {
+    color: $white;
+    background-color: $black-ter !important;
+}
+
+html {
+    background-color: $black-ter !important;
+    overflow-y: hidden;
+}
+
+.has-text-mgrey {
+    color: $grey-darker;
+}
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $grey-darker !important;
+    opacity: 1; /* Firefox */
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: $grey-darker !important;
+    opacity: 1; /* Firefox */
+}
+
+label {
+    color: $white;
+}
+
+.chat-message-text {
+    display: block;
+    white-space: pre-wrap;
+    padding-top: 2px;
+}
+
+.has-text-brown {
+    color: $brown;
+}
+
+.large-modal {
+    height: 500px;
+}
+
+.media + .media {
+    border-top: none;
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+}
+
+strong {
+    color: $white;
+}
+
+code {
+    color: $white;
+    background-color: $black-bis;
+    max-width: 100%;
+}
+
+pre {
+    color: $white;
+    background-color: $black-bis;
+    padding: 10px !important;
+    margin-bottom: 10px;
+    white-space: pre-wrap; /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+input {
+    background-color: transparent !important;
+    color: $white !important;
+}
+
+.modal-bottom-strip {
+    padding-top: 10px;
+}
+
+.modal-window {
+    padding: 20px;
+}
+
+.emoji-picker {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    margin-bottom: 80px;
+    padding: 20px;
+    z-index: 6;
+}
+
+.icon-group > span {
+    padding-left: 1ch;
+}
+
+.close-button-wrapper {
+    font-size: 18px;
+    float: right;
+    margin-top: -5px;
+    color: $red !important;
+}
+
+.pointer-cursor {
+    cursor: pointer;
+}
+
+.close-button-wrapper:hover {
+    color: lighten($red, 15%) !important;
+    cursor: pointer;
+}
+
+.menu-button-wrapper {
+    font-size: 18px;
+    float: right;
+    margin-top: -5px;
+}
+
+.menu-button-wrapper:hover {
+    color: $light;
+    cursor: pointer;
+}
+
+.react-contextmenu-wrapper {
+    cursor: pointer;
+}
+
+.react-contextmenu {
+    color: $white;
+    background-color: $black;
+    border: 2px darken($black-bis, 4%) solid;
+    padding: 10px;
+    z-index: 10;
+    width: 180px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+        0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+        0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+}
+
+.react-contextmenu-item {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 4px 8px 4px 8px;
+    cursor: pointer;
+}
+
+.react-contextmenu-item:hover {
+    background-color: $red;
+}
+
+.react-contextmenu-item--divider {
+    padding: 2px;
+    background-color: transparent;
+}
+
+.user-bar {
+    position: absolute;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    background-color: $black-bis;
+    border-top: $black-ter 2px solid;
+    z-index: 100;
+}
+
+.react-contextmenu-item--divider:hover {
+    padding: 2px;
+    background-color: $black-ter;
+}
+
+.user-bar-avatar {
+    float: left;
+}
+
+/* The sidebar menu */
+.right-sidebar {
+    height: calc(
+        100% - 50px
+    ); /* Full-height: remove this if you want "auto" height */
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 250px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 2; /* Stay on top */
+    top: 50px; /* Stay at the top */
+    right: 0;
+    overflow-x: hidden; /* Disable horizontal scroll */
+}
+
+.chat-message-wrapper {
+    overflow-x: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+.swipe-anchor-left {
+    position: absolute;
+    height: calc(100% - 50px);
+    width: 25px;
+    left: 0;
+    bottom: 0;
+    z-index: 222;
+    background-color: transparent;
+}
+
+.swipe-anchor-right {
+    background-color: transparent;
+    position: absolute;
+    height: calc(100% - 50px);
+    bottom: 0;
+    width: 25px;
+    right: 0;
+    z-index: 222;
+}
+
+.top-bar-left {
+    padding: 15px 20px 15px 20px;
+    position: absolute;
+    width: 263px;
+    height: 100%;
+    left: 0;
+    z-index: 2;
+    border-bottom: $black-ter 1px solid;
+}
+
+.block-quote-icon {
+    position: relative;
+    width: 10px;
+    left: 0;
+    top: 0;
+}
+
+.block-quote-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.block-quote-wrapper > p {
+    position: relative;
+    left: 20px;
+    top: 0px !important;
+}
+
+.block-quote-wrapper > svg {
+    position: absolute;
+    left: 0px;
+    top: 4px !important;
+}
+
+.top-bar-right {
+    position: absolute;
+    width: calc(100% - 263px);
+    height: 100%;
+    left: 263px;
+    z-index: 2;
+    border-bottom: $black-bis 1px solid;
+}
+
+.menu {
+    margin: 20px;
+}
+
+/* The sidebar menu */
+.left-channelbar {
+    height: calc(
+        100% - 50px
+    ); /* Full-height: remove this if you want "auto" height */
+    width: 263px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 2; /* Stay on top */
+    top: 50px; /* Stay at the top */
+    left: 0px;
+    overflow-x: hidden; /* Disable horizontal scroll */
+}
+
+.channel-list-item.is-active {
+    background-color: $black-ter;
+}
+
+.channel-name-text {
+    float: left !important;
+    width: 100%;
+}
+
+.mobile-menu-toggle-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 50px;
+    left: 0;
+    top: 0;
+    background-color: $black-bis;
+}
+
+.user-menu-toggle-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 50px;
+    right: 0;
+    top: 0;
+}
+
+.channel-name-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    z-index: -1;
+}
+
+.image-preview-background {
+    position: absolute !important;
+    width: 100% !important;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+/* The top menu */
+.top-bar {
+    height: 50px; /* Full-height: remove this if you want "auto" height */
+    width: 100%; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    right: 0px;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    background-color: $black-bis;
+    border-bottom: 2px $black-ter solid;
+}
+
+.emoji-name {
+    margin-left: 2ch;
+    color: $white;
+}
+
+.emoji-option {
+    margin-bottom: 1ch;
+}
+
+.emoji {
+    -o-object-fit: contain;
+    object-fit: contain;
+    width: 1.375em;
+    height: 1.375em;
+    vertical-align: bottom;
+}
+
+.emoji:only-child {
+    width: 3rem;
+    height: 3rem;
+}
+
+.role-icon {
+    padding-right: 1ch;
+}
+
+.color-picker-wrapper {
+    color: $grey-darker;
+}
+
+.color-picker-wrapper:hover {
+    cursor: pointer;
+    color: darken($grey-darker, 10%) !important;
+}
+
+.message-username {
+    padding-right: 1ch;
+}
+
+/* The sidebar menu */
+.bottom-bar {
+    padding: 20px;
+    height: 100px; /* Full-height: remove this if you want "auto" height */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 0; /* Stay on top */
+    bottom: 0; /* Stay at the top */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    // border-top: $black 3px solid;
+}
+
+/* The sidebar menu */
+.chat-window {
+    height: calc(
+        100% - 50px - 100px
+    ); /* Full-height: remove this if you want "auto" height */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 50px; /* Stay at the top */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    // this looks terrible
+}
+
+.chat-window-loro {
+    width: calc(100% - 263px - 250px); /* Set the width of the sidebar */
+    right: 250px;
+}
+
+.chat-window-lcro {
+    width: calc(100% - 250px); /* Set the width of the sidebar */
+    right: 250px;
+    left: 0px;
+}
+
+.chat-window-lorc {
+    width: calc(100% - 263px); /* Set the width of the sidebar */
+    right: 250px;
+    left: 263px;
+}
+
+.chat-window-lcrc {
+    width: 100%;
+    left: 0;
+}
+
+.chat-window-snap-to-bottom {
+    position: absolute;
+    bottom: 0rem;
+    right: 1.25rem;
+    z-index: 5;
+    font-size: 42px;
+    color: $grey-darker;
+    cursor: pointer;
+}
+
+.chat-window-snap-to-bottom:hover {
+    color: lighten($grey-darker, 5%);
+}
+
+.chat-message-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    margin-left: 20px;
+    padding-right: 20px;
+}
+
+.chat-message-wrapper:last-child {
+    padding-top: 20px;
+}
+
+.chat-messages {
+    flex: 1;
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.translucent {
+    opacity: 0.5;
+}
+
+.chat-input-wrapper {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 10px 10px 10px 35px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+        0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+        0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+}
+
+.chat-input-attach-button {
+    position: absolute;
+    height: 100%;
+    top: 10px;
+    left: 10px;
+    width: 15px;
+}
+
+.searchbar-wrapper {
+    position: absolute;
+    right: 0;
+}
+
+.chat-input {
+    resize: none;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-weight: 400;
+    background-color: transparent !important;
+    color: $white !important;
+    font-size: 1rem;
+    line-height: 1.375rem;
+    width: 100%;
+    height: 100%;
+    min-height: 44px;
+    padding-left: 0;
+    padding-right: 10px;
+    outline: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: $black-ter;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $grey-darker;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.channel-finder__control {
+    background-color: transparent !important;
+}
+
+.channel-finder__control--is-focused {
+    background-color: transparent !important;
+    border-color: $red !important;
+    box-shadow: 0 0 0 1px $red !important;
+}
+
+.channel-finder {
+    background-color: transparent !important;
+}
+
+.channel-finder__value-container {
+    background-color: transparent !important;
+}
+
+.channel-finder__indicators {
+    background-color: transparent !important;
+}
+
+.channel-finder__menu {
+    background-color: $black !important;
+}
+
+.channel-finder__menu-list {
+    background-color: transparent !important;
+}
+
+.channel-finder__option {
+    background-color: transparent !important;
+    color: $white !important;
+}
+
+.channel-finder__option:hover {
+    background-color: $black-bis !important;
+}
+
+.channel-finder__multi-value {
+    background-color: $black-bis !important;
+    color: $white;
+}
+
+.channel-finder__multi-value__label {
+    color: $white !important;
+    font-weight: bold;
+}
+
+.chat-window-messages {
+    display: inline-block;
+}
+
+.channel-finder__multi-value__remove:hover {
+    color: $white !important;
+    background-color: $red !important;
+}
+
+.profile-username {
+    cursor: pointer;
+}
+
+.user-bar-username {
+    padding-left: 1ch;
+}
+
+.user-bar-cog-wrapper {
+    color: $grey-darker;
+    padding-left: 5ch;
+}
+.user-bar-cog-wrapper:hover {
+    cursor: pointer;
+    color: lighten($grey-darker, 5%);
+}
+
+.Aligner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.Aligner-item {
+    max-width: 100%;
+}
+
+.Aligner-item--top {
+    align-self: flex-start;
+}
+
+.Aligner-item--bottom {
+    align-self: flex-end;
+}
