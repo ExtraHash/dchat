@@ -7,11 +7,17 @@ import { ws } from "..";
 import { getAvatar } from "./userProfile";
 import ax from "axios";
 
+export type IFile = {
+    data: string;
+    id: string;
+    fileName: string;
+}
+
 export type Message = {
     type: string;
     id: string;
     text: any;
-    file: File;
+    file: IFile;
     time: string;
     username: string;
 };
@@ -180,6 +186,7 @@ export class ChatWindow extends Component<Props, State> {
                                                         </small>
                                                         <br />
                                                         {message.text}
+                                                        <a href={process.env.REACT_APP_API_URL+"/file/"+message.file.id} rel="noopener noreferrer" target="_blank">{message.file.fileName}</a>
                                                     </div>
                                                 </div>
                                                 <div className="media-right"></div>
