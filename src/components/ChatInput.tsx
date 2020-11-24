@@ -60,7 +60,7 @@ export class ChatInput extends Component<Props, State> {
                                 }
                     
                                 await ax.post(
-                                    "http://" + process.env.REACT_APP_API_URL + "/file",
+                                    "https://" + process.env.REACT_APP_API_URL + "/file",
                                     formData
                                 );
                             }
