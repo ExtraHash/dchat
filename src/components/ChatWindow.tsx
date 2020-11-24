@@ -108,7 +108,7 @@ export class ChatWindow extends Component<Props, State> {
                         }
             
                         await ax.post(
-                            "http://" + process.env.REACT_APP_API_URL + "/file",
+                            "https://" + process.env.REACT_APP_API_URL + "/file",
                             formData
                         );
                     }
@@ -186,7 +186,7 @@ export class ChatWindow extends Component<Props, State> {
                                                         </small>
                                                         <br />
                                                         {message.text}
-                                                        <a href={process.env.REACT_APP_API_URL+"/file/"+message.file.id} rel="noopener noreferrer" target="_blank">{message.file.fileName}</a>
+                                                        <a href={"https://"+process.env.REACT_APP_API_URL+"/file/"+message.file.id} rel="noopener noreferrer" target="_blank">{message.file.fileName}</a>
                                                     </div>
                                                 </div>
                                                 <div className="media-right"></div>
