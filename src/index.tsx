@@ -5,7 +5,7 @@ import * as serviceWorker from "./serviceWorker";
 import WebSocket from "isomorphic-ws";
 
 export const ws = new WebSocket(
-    "ws://" + process.env.REACT_APP_API_URL + "/socket"
+    "wss://" + process.env.REACT_APP_API_URL + "/socket"
 );
 
 ws.onopen = function open() {
